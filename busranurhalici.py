@@ -15,12 +15,6 @@ import pandas as pd
 import urllib.request
 from bs4 import BeautifulSoup
 
-url = "https://www.nytimes.com/crosswords/game/mini"
-html_icerigi =  urllib.request.urlopen(url)
-soup = BeautifulSoup(html_icerigi,"lxml")
-acrossnum = soup.find_all("span",{"class":"Clue-label--2IdMY"})
-acrosscon = soup.find_all("span",{"class":"Clue-text--3lZl7"})
-acrossliste = list()
     
 for i in range(5):
         acrossnum[i] = (acrossnum[i].text).strip("\n").strip()
